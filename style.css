@@ -30,6 +30,43 @@ body {
 }
 
 /* ================= CARD ================= */
+.card {
+  background-color: var(--card-bg);
+  border-radius: 10px;
+  overflow: hidden;
+  max-width: 1000px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+/* ================= IMAGE ================= */
+.card-image {
+  background: url('images/image-header-mobile.jpg') center/cover no-repeat;
+  height: 250px;
+  position: relative;
+}
+
+/* Overlay violet */
+.card-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--accent);
+  opacity: 0.5;
+}
+
+/* ================= TEXT ================= */
+.card-text {
+  padding: 30px;
+  text-align: center;
+}
+
+.card-text h1 {
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
 .card-text span {
   color: var(--accent);
 }
@@ -56,4 +93,37 @@ body {
   color: var(--white-60);
   font-size: 12px;
   text-transform: uppercase;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (min-width: 768px) {
+  .card {
+    flex-direction: row-reverse;
+  }
+
+  .card-image {
+    background: url('images/image-header-desktop.jpg') center/cover no-repeat;
+    width: 50%;
+    height: auto;
+  }
+
+  .card-text {
+    width: 50%;
+    text-align: left;
+    padding: 50px;
+  }
+
+  .stats {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+@media (max-width: 768px) {
+    .container{
+        padding: 30px;
+    }
+  .card {
+    flex-direction: column;
+  }
+ 
 }
